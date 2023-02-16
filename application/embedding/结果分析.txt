@@ -1,0 +1,165 @@
+
+每个人最亲近的关系排序
+
+skip gram
+monica, phoebe, joey, chandler, ross, rachel
+phoebe, monica, joey, rachel, ross, chandler
+rachel, chandler, phoebe, ross, monica, joey
+joey, ross, phoebe, chandler, monica, rachel
+chandler, rachel, ross, joey, monica, phoebe
+ross, chandler, joey, phoebe, rachel, monica
+
+cbow 
+monica, phoebe, rachel, ross, chandler, joey
+phoebe, monica, ross, rachel, joey, chandler
+rachel, phoebe, monica, ross, joey, chandler
+joey, chandler, phoebe, monica, ross, rachel
+chandler, joey, phoebe, monica, ross, rachel
+ross, phoebe, monica, rachel, chandler, joey
+
+glove
+monica, phoebe, rachel, chandler, joey, ross
+phoebe, chandler, rachel, monica, joey, ross
+rachel, phoebe, monica, chandler, joey, ross
+joey, ross, chandler, monica, rachel, phoebe
+chandler, phoebe, joey, rachel, monica, ross
+ross, joey, rachel, monica, phoebe, chandler
+
+每个人关系最紧密的topk-20的词
+
+skip gram
+monica, sit, takes, soon, senses, roger:, way, better, rest, always, window, thank, anything, "dont", "wasnt", going, chick, did, von, funny
+phoebe, nodded, indeedy, girls, popping, whatok, glove, quality, cheek, teen, kisses, be, i’m, why, without, blew, or, than, check, punches
+rachel, puts, money, put, spend, shhh, wellsounds, meet, "wont", luckiest, anything, through, as, figment, discussion, get, angela, credit, bell, who-who
+joey, barbara, atm, whistle, young, "paulos", mechanics, "wherem", dip, dresser, talking, madness, worth, kid, shelley, stare, "shall", guess, answer, accordance
+chandler, party, wh-, hand-licker, rachel-land, suddenly, difficult, please, rough, three, von, tries, ideal, life-affirming, grabs, "cant—you", shopping, cute, furious, hold
+ross, young, playing, cards, checks, tapping, relationship, atm, paul, "chandlers", whole, sorta, rules, felt, adjustments, tomorrow, i’m, opening, said, envelope
+莫妮卡，坐，需要，很快，感觉，罗杰，​​方式，更好，休息，总是，窗口，谢谢，任何东西，不要，没有，去，小鸡，做，冯，有趣
+菲比，点头，确实，女孩，弹出，whatok，手套，质量，脸颊，青少年，亲吻，是，我，为什么，没有，吹，或者，比，检查，拳
+瑞秋，放，钱，放，花，嘘，wellsounds，满足，不会，最幸运的，任何东西，通过，作为，虚构，讨论，得到，安吉拉，信用，贝尔，谁-谁
+乔伊，芭芭拉，自动取款机，口哨，年轻，“保罗”，机械师，哪里，倾角，梳妆台，说话，疯狂，值得，孩子，雪莱，凝视，应该，猜测，回答，按照
+钱德勒, 派对, wh-, hand-licker, rachel-land, 突然, ​​困难, 请, 粗糙, 三, von, 尝试, 理想, 肯定生活, 抓住, cant-you, 购物, 可爱, 愤怒, 持有
+罗斯，年轻，演奏，卡片，支票，敲击，关系，自动取款机，保罗，钱德勒，整体，排序，规则，毡，调整，明天，我，打开，说，信封
+
+cbow 
+monica, bob:, stomach, walkman, rachel’s, reaches, smoking, rolls, "rachels", enter, spoon, janice, frantically, wildly, stares, bursts, pulls, "bobbys", newspaper}, geller
+phoebe, counter, singing, rachel’s, sees, watching, aww, enters, grabs, bending, characters, rolls, patti, base-, drags, over, asked, owe, "monicas", hunk
+rachel, tears, terry:, knock, gifts, made, knitting, pointing, beside, launderama, franzblau, dubious, paolo, lasagne, motions, cause, "rachel", vulnerable, mention, cards
+joey, ate, pepponi, in-, chander, tribbiani, mmmmmm, everyond, menorah, sarcasticly, shakes, seated, nods, gives, patient, appreciatively, "wheres", brings, officially, dumbstruck
+chandler, "joeys", cut, persecuting, tries, twenty-five, cold, smoking, "sugar-os", sleeping, bend, penis, rules, proudly, cuts, joey, stupidity, hat, rematch, scones
+ross, staring, jacket, airport, bag, picks, stares, services, d-did, trust, bermuda, bzzzz, scared, emerges, pile, sauce, tapping, absent, "wheres", drags
+
+莫妮卡，鲍勃，胃，随身听，瑞秋的，到达，吸烟，卷，“瑞秋”，进入，勺子，珍妮丝，疯狂，疯狂，凝视，爆发，拉，鲍比斯，报纸，盖勒
+菲比, 柜台, 唱歌, 瑞秋的, 看到, 看, aww, 进入, 抓, 弯曲, 字符, 卷, 帕蒂, 基地-, 拖, 结束, 问, 欠, 莫妮卡, 大块头
+瑞秋，眼泪，特里：，敲，礼物，制作，针织，指点，旁边，洗衣店，franzblau，可疑，保罗，千层面，动作，原因，瑞秋，易受伤害，提及，卡片
+乔伊, 吃, 意大利辣香肠, in-, chander, tribbiani, mmmmmm, 杏仁，烛台, 讽刺地, 摇晃, 坐下, 点头, 给予, 耐心, 感激地, 哪里, 带来, 正式, 目瞪口呆
+钱德勒，乔伊斯，切割，迫害，尝试，二十五岁，感冒，吸烟，“sugar-os”，睡觉，弯曲，阴茎，规则，自豪，切割，乔伊，愚蠢，帽子，复赛，烤饼
+罗斯，凝视，夹克，机场，包，挑选，凝视，服务，d-did，信任，百慕大，bzzzz，害怕，出现，桩，酱，敲击，缺席，哪里，拖累
+
+
+
+glove
+monica, ended, buchman, tip:, "bed", uncoordinated, smells, smelling, thurman, balcony, stegosaurus, eraser, "susans", advantage, puma, "ydont", project, response, noth-, centimeters
+phoebe, y-you, drowning, boyish, shuts, hardball, corporation, egg, flounders, variety, notice, "tellin", alive, bleats, indoors, golf, rushing, parties, deja, aaah
+rachel, borders, includes, -if, currently, hasselhof, "fixins", slimmer, saving, eventually, smitten, bon, voiceover, turning, bell, aware, panel, jack, proofs, common
+joey, erect, breasts, cent, "monkeys", diaper, kissing, moustache, debating, lies, hushes, sign, whether, sixth, reappears, science, monana, insane, resists, jail
+chandler, meant, fabric, "stick", lay, feeds, letter, bound, characters, flustered, ow, ba-, brooklyn, paul:, hannah, metaphorically, greenstein, kissed, snickers, victim
+ross, wrist, rangers-penguins, mashed, wakes, amish, bear, christmas, astonished, cancer, "we", don’t, wha-, astounded, caring, resolve, freaked, preferred, insecure, fran
+
+莫妮卡，结束，布克曼，提示：床，不协调，气味，气味，瑟曼，阳台，剑龙，橡皮擦，苏珊，优势，美洲狮，ydont，项目，响应，noth-，厘米
+菲比，你，溺水，孩子气，关闭，强硬，公司，鸡蛋，比目鱼，品种，通知，tellin，活着，咩咩，室内，高尔夫，冲，派对，deja，aaah
+瑞秋，边界，包括，-如果，目前，hasselhof，fixins，更苗条，节省，最终，击打，bon，画外音，车削，钟，意识到，面板，杰克，样张，常见
+乔伊，勃起，乳房，美分，猴子，尿布，接吻，小胡子，辩论，谎言，安静，标志，是否，第六，再次出现，科学，莫娜娜，疯狂，抵抗，监狱
+钱德勒，意思是，织物，棍子，躺，喂，信，绑定，字符，慌张，哦，巴-，布鲁克林，保罗：汉娜，比喻，格林斯坦，亲吻，士力架，受害者
+罗斯，手腕，护林员企鹅，捣碎，唤醒，阿米什人，熊，圣诞节，惊讶，癌症，“我们”，不要，wha-，震惊，关心，解决，吓坏了，首选，不安全，弗兰
+
+
+
+结论：
+    感觉三种编码方式得到的结果都很不一样。cbow从语义理解的角度看，效果要更好一点。
+    比如joe喜欢吃东西，犹太人光明节的蜡烛
+
+    
+
+尝试了一下增加文本量10季的对话文本
+    训练难度陡峭增加，cbow 甜心梯度居然在1e-5左右
+
+
+
+
+每个人最亲近的关系排序
+skip gram
+monica, phoebe, joey, rachel, ross, chandler
+phoebe, monica, joey, rachel, chandler, ross
+rachel, ross, joey, monica, chandler, phoebe
+joey, ross, monica, phoebe, rachel, chandler
+chandler, ross, joey, monica, rachel, phoebe
+ross, joey, rachel, chandler, monica, phoebe
+
+cbow 
+monica, rachel, joey, chandler, ross, phoebe
+phoebe, rachel, joey, chandler, monica, ross
+rachel, phoebe, monica, ross, joey, chandler
+joey, chandler, ross, monica, phoebe, rachel
+chandler, joey, phoebe, monica, rachel, ross
+ross, joey, rachel, monica, chandler, phoebe
+
+glove
+monica, phoebe, rachel, chandler, ross, joey
+phoebe, chandler, monica, rachel, ross, joey
+rachel, phoebe, chandler, monica, ross, joey
+joey, rachel, ross, chandler, monica, phoebe
+chandler, phoebe, rachel, monica, ross, joey
+ross, rachel, chandler, phoebe, monica, joey
+
+每个人关系最紧密的topk-20的词
+
+skip gram
+monica, mum, chiefs, vs, outisde, knockers, liam:, vais, 20, "amys>", oo-oo, "fighting", schoolyard, hinges, doddle, "screendont", "a-doin", tilts, provocatively, section
+phoebe, daddy, stuart, pluck, somewhat, seasons, cheques, anybody, "itsits", parrot, futile, testicles, emillio, g-go, futon, 905, duncan, -make, wallet, purchased
+rachel, tratt, sally, podium, suite, 904, pirate;, blessing, mid-term, imp, owner, middle;, aggressive, oh-whoa-hey, rugs, your-your, centralnot, paleontologist:, operas, cleveland
+joey, "ernies", fatigues, 25-year-olds, hummina-hummina-hummina, 923, "that", notakes, semi-finals, chichas, waste, fidgeting, worm, mccreery, gut-check, furiously, expectation, shannon, anymorrrrre, lads
+chandler, blackout, controls, pantomimes, rooting, visitor, countanyway, phillips, yet, days, 21, lightning-bearer, b-a-b-y, feelings, suppose, consult, attacks, blacked, walked, "twos"
+ross, letting, punishment, jody, legislature, linguistics, staton, smelling, "theyll-theyll", simon, bingi, untangle, lizards, orjenga, spider, wonderfulness, benno, varoom, "yknow-yknow", intellectuals
+莫妮卡，妈妈，酋长，vs，outisde，门环，利亚姆：，vais，20，“amys>”，oo-oo，“战斗”，校园，铰链，doddle，“screendont”，“a-doin”，倾斜，挑衅地，部分
+菲比，爸爸，斯图尔特，pluck，有点，季节，支票，任何人，“itsits”，鹦鹉，徒劳，睾丸，emillio，g-go，蒲团，905，邓肯，-make，钱包，购买
+瑞秋，特拉特，莎莉，讲台，套房，904，海盗；祝福，中期，小鬼，所有者，中间；侵略性，哦-哇-嘿，地毯，你的，中央，古生物学家：，歌剧，克利夫兰
+乔伊，“ernies”，疲劳，25 岁​​，hummina-hummina-hummina，923，“那个”，notakes，半决赛，chichas，浪费，坐立不安，蠕虫，mccreery，肠道检查，愤怒地，期望，香农，anymorrrre，小伙子们
+钱德勒，停电，控制，哑剧，生根，访客，无论如何，菲利普斯，然而，天，21，闪电侠，b-a-b-y，感觉，假设，咨询，攻击，涂黑，走路，“双胞胎”
+罗斯, 让, 惩罚, 乔迪, 立法机关, 语言学, staton, 嗅觉, "theyll-theyll", simon, bingi, untangle, 蜥蜴, orjenga, spider, wonderfulness, benno, varoom, "yknow-yknow", 知识分子
+
+
+cbow 
+monica, bang, frantically, petes, comforting, traipsing, mouths, deadpan, drags, screams, 30%, erica, handing, disgust, shoves, shoulder, passionately, glaring, what-whats, th--fun
+phoebe, sr:,  poses, fear, buffay, manages, joining, :, husband, milk, cartwheel, ewwww, knit, borkow, stabby, wrapped, mike, hodge, slept, painless
+rachel, slamming, tilts, 123, returns, amy, greep, gate, dumped, strangely, mail, "howre", winks, follows, hangs, punches, slowly, scaring, pushes, kisses
+joey, tribbiani, shrugs, motions, gives, avoiding, arriving, dials, torch, moves, gear, buttafucco, blah, loses, gellers, searching, helping, approaches, understands, drapes
+chandler, bing, "eddies", newspaper, faking, struts, decorated, charcoal, discuss, toward, mimics, fist, managed, occupied, rice, mary, colonel:, pass, hug, hide
+ross, startling, sofa, lap, jokes, smiles, groans, returns, notices, camera, helping, lounger, near, conversation, beside, regret, emily, follows, amused, spider
+
+莫妮卡, 砰, 疯狂, 皮特斯, 安慰, 走动, 嘴巴, 面无表情, 拖拽, 尖叫, 30%, 埃丽卡, 递, 厌恶, 推搡, 肩膀, 热情地, 怒目而视, 什么-什么, th--fun
+菲比, sr:, 姿势, 恐惧, buffay, 管理, 加入, :, 丈夫, 牛奶, 车轮, ewwww, 针织, borkow, 刺, 包裹, 迈克, hodge, 睡觉, 无痛
+瑞秋, 砰砰, 倾斜, 123, 返回, 艾米, greep, 门, 倾倒, 奇怪的是, 邮件, “豪尔”, 眨眼, 跟随, 挂起, 拳打脚踢, 慢慢地, 吓唬, 推, 亲吻
+乔伊, tribbiani, 耸肩, 运动, 给予, 避免, 到达, 拨号, 火炬, 移动, 齿轮, buttafucco, 等等, 失败, 盖勒斯, 搜索, 帮助, 接近, 理解, 窗帘
+钱德勒，冰，“涡流”，报纸，假装，支柱，装饰，木炭，讨论，朝向，模仿，拳头，管理，占据，米，玛丽，上校：，通过，拥抱，隐藏
+罗斯, 惊人的, 沙发, 圈, 笑话, 微笑, 呻吟, 返回, 通知, 相机, 帮助, 躺椅, 近, 会话, 旁, 后悔, 艾米丽, 跟随, 逗乐, 蜘蛛
+
+
+glove
+accompanies, punctuates, martha, guuuyys, nowgo, urse, "franzs", troop, o-o-o-o-okay, sentiment, pale, "law", virtually, injured, wowdefinitely, silk-screen, rockyor, controllers, rec, nosed
+slurs, knoller, boatsees, alll, thirteen, explosion, delay, so-called, staying-over-stuff, playstation, coo-pa, suzie, loaf, lukewarm, fingering, damaged, commercial:, heyhey, phlegm
+"flys", tracks, "joannas", knowbefore, pinning, burt:, pressurised, wa-, multiplex, "times", labour, oh-kay, iswho, shade, victims, issacs, joey-love, exuberance, stimulate, demonstrate
+pinning, "idiot", scientific, agencies, keeping, romance, kn-i, fitch, shhhi, ment, cantelope, barcalounger, overwhelm, "awkwardim", selfless, negotiating, knowbefore, just-im, "memo-", lessintense
+occurrence, declarations, deconstructing, vould, "cantyou", torts, bandages, dreaming, shhhhh, cobras, millionaire, ah-uh, merchants, shared, righthey, whizzing, tableau, flash, crusty, exchanges
+exposed, bruise, info-mercial, goin, tracks, anchors, "idiot", it--, tapdance, dialect, quilt, whiny, rockyor, decorated, "joannas", uncertain, insultees, same-, chants, prague
+
+意外：
+    w2v 自己和自己居然不是最近的token？？
+    glove没有训练好
+
+新的todo
+    内积能不能反应距离， 还是需要计算更加严谨的cos角度
+    glove 感觉还是不如w2v的效果，只是一方面的近似。向量的长度没有自动的规划好。
+
+todo 用fasttext试一试效果
+todo 用官方的word2vec玩一玩

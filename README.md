@@ -1,13 +1,13 @@
 # sgd_NLP
 
 ###简介
-    基于python和pytorch框架的npl常见算法库
+    基于pytorch框架的npl常见算法库
 
 ###主要实现算法
 已完成：
 None
 
-待整理：
+todo
 - 中文分词
 - 热词检索
 - 标注问题（POS、tagging）

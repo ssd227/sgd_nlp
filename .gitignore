@@ -3,3 +3,7 @@
 venv
 .idea
 __pycache__/
+data/*
+*/data/*
+*/save/*
+application/embedding/save/*
