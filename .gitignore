@@ -2,8 +2,9 @@
 待整理
 venv
 .idea
-__pycache__/
+*__pycache__*
 data/*
 */data/*
 */save/*
-application/embedding/save/*
+
+apps/embedding/save/*
