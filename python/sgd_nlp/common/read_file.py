@@ -22,21 +22,25 @@ def yield_tokens(file_path, reverse=False, encoding='utf-8'):
         for token in line.split():
             yield token
 
+###########################################################################
 
 def yield_tokens_from_line(line, reverse=False, preprocess_func=None):
     return [preprocess_func(token) if preprocess_func else token for token in line.split()]
+
 
 def yield_tokens_from_docs(doc_list, reverse=False, encoding='utf-8', preprocess_func=None):
     for doc in doc_list:
         for token in yield_tokens(doc, reverse=reverse, encoding=encoding):
             yield preprocess_func(token) if preprocess_func else token
 
+###########################################################################
 
 def transform_tokens_list_to_tokens(tokens_list):
     for tokens in tokens_list:
         for token in tokens:
             yield token
 
+###########################################################################
 
 def write_lines(lines, file_path):
     with open(file_path, 'w') as f:

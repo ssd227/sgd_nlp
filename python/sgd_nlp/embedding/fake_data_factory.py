@@ -1,8 +1,11 @@
-import random
+'''
+only for testing
+'''
 
+import random
 import torch
 
-from sgd_nlp.core.common.vocab import Vocab
+from ..common.vocab import Vocab
 
 
 class FakeDataFactory:

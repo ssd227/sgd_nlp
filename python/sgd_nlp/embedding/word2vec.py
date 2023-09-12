@@ -5,15 +5,13 @@ define two embedding models
     -Cbow
     -SkipGram
 
-模型用法：application/embedding
+模型用法: apps/embedding
 """
-import time
-
 import torch
 from torch import nn
 import torch.nn.functional as F
 
-# todo cbow的训练难度更大一点，结果不容易收敛
+# cbow的训练难度更大一点，结果不容易收敛
 class Cbow(nn.Module):
     def __init__(self, token_num, win_width, emb_dim=256, sparse_emb=False):
         super(Cbow, self).__init__()

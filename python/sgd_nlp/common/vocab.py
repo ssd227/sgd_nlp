@@ -2,7 +2,6 @@
 import math
 import random
 from collections import Counter
-
 from .default_token import DefaultToken
 
 """
@@ -37,17 +36,16 @@ class Vocab:
         4、序列化state,不用重头处理
     """
 
-    def __init__(self, tokens=[], min_freq=0, reserved_tokens=[]):
+    def __init__(self, tokens, min_freq=0, reserved_tokens=[]):
         self.unk_token = DefaultToken.unk_token  # todo 用这个做padding行不行
-
+                
         # 统计词频率
-        self._token_freqs = sorted(Counter(tokens).items(),
-                                   key=lambda x: x[1], reverse=True)
+        self._token_freqs = sorted(Counter(tokens).items(), key=lambda x: x[1], reverse=True)
+
 
         # 未知词元的索引为0
         self.idx_to_token = [self.unk_token] + reserved_tokens
-        self.token_to_idx = {token: idx
-                             for idx, token in enumerate(self.idx_to_token)}
+        self.token_to_idx = {token: idx for idx, token in enumerate(self.idx_to_token)}
 
         # 处理tokens
         for token, freq in self._token_freqs:
@@ -62,12 +60,13 @@ class Vocab:
         self._token_weight = [1 / self.corpus_word_count] + [freq / self.corpus_word_count for _, freq in
                                                              self._token_freqs]
 
-        def prob(count):
-            t = 1e-5
-            return 1-math.sqrt(t/count)
-
-        new_token_freq = [1] + [freq for _, freq in self._token_freqs]
-        self._token_weight_2 = list(map(prob, new_token_freq))
+        # 计算采样权重
+        def adjust_probability(count):
+            return 1-math.sqrt(1e-5/count) # 频数变换，改变采样概率
+        new_token_freq = [1] + [freq for _, freq in self._token_freqs] # 补上默认unk字符
+        self._token_weight_2 = list(map(adjust_probability, new_token_freq))
+        
+        self.sample_cache = [] 
 
     def __len__(self):
         return len(self.idx_to_token)
@@ -75,29 +74,43 @@ class Vocab:
     def __getitem__(self, tokens):
         return self.to_ids(tokens)
 
-    def token_num(self):
-        return len(self.idx_to_token)
-
+    # tokens转ids
     def to_ids(self, tokens):
         # 单个token直接查表
         if not isinstance(tokens, (list, tuple)):
             return self.token_to_idx.get(tokens, self.token_to_idx[self.unk_token])
 
         # 列表型数据,递归调用自己
-        # ！！！还有递归效果,可以嵌套的转换index
-        # ！！！ 但是使用的时候需要用户非常注意,不然超出预期
+        # ！还有递归效果,可以嵌套的转换index。但使用时需要用户注意,不然超出预期
         return [self.to_ids(token) for token in tokens]
 
+    # ids转tokens
     def to_tokens(self, indices):
         if not isinstance(indices, (list, tuple)):
             return self.idx_to_token[indices]
         return [self.idx_to_token[index] for index in indices]
 
+    # 总token数
+    def token_num(self):
+        return len(self.idx_to_token)
+
+    # 语料总词数
+    def _get_corpus_word_count(self):
+        return sum([x[1] for x in self._token_freqs])
+    
+    # 各token频率分布
     def token_freqs(self):
         return self._token_freqs
 
-    def _get_corpus_word_count(self):  # 语料一共有多少词
-        return sum([x[1] for x in self._token_freqs])
+    def sample_word(self, k): # 按权重采样
+        # 使用缓存稍微优化一下batch的吞吐量
+        if len(self.sample_cache) < k:
+            self.sample_cache += random.choices(self.idx_to_token, weights=self._token_weight_2, k=1000)
+        
+        # cache中还有余量
+        ks = self.sample_cache[:k]
+        self.sample_cache = self.sample_cache[k:]
+        return ks
 
     def log_info(self):
         print('****** VOCAB LOG INFO ******')
@@ -105,13 +118,7 @@ class Vocab:
             self.corpus_word_count,
             len(self.idx_to_token),
             self._token_freqs[:50], self._token_freqs[-50:]))
-        print('****** vocab log end ******')
-
-    def sample_word(self, k):
-        # if True:
-        #     return random.choices(self.idx_to_token, weights=self._token_weight, k=k)
-        return random.choices(self.idx_to_token, weights=self._token_weight_2, k=k)
-
+        print('****** vocab log end ******')   
 
 # factory function, return class Vocab
 def vocab(tokens, min_freq: int = 1) -> Vocab:

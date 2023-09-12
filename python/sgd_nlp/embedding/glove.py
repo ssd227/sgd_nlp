@@ -1,14 +1,8 @@
 # encoding=utf8
 
 """
-define two embedding models
-    -Cbow
-    -SkipGram
-
-模型用法：application/embedding
+模型用法: apps/embedding
 """
-import time
-
 import torch
 from torch import nn
 import torch.nn.functional as F
@@ -34,7 +28,7 @@ class Glove(nn.Module):
         x:
         [idi idj xij]  wi_id wj_id 共现统计数
         维度：[B, 3]
-        只要输入稀疏的词 共现对（Xij）的batch
+        只要输入稀疏的词 共现对(Xij)的batch
         就可以直接训练
         """
         wi = self.emb_i(x[:, 0:1])  # [B, 1, emb_n]
