@@ -3,7 +3,6 @@ import torch
 import numpy as np
 
 
-
 class Dictionary(object):
     """
     Creates a dictionary from a list of words, mapping each word to a
